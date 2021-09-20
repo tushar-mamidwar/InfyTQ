@@ -23,7 +23,6 @@ def find_product(num1,num2,num3):
         product=-1
     else:
         product=num1*num2*num3
-    #write your logic here
     return product
 
 #Provide different values for num1, num2, num3 and test your program
