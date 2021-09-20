@@ -50,6 +50,6 @@ def calculate_bill_amount(food_type,quantity_ordered,distance_in_kms):
 
     return bill_amount
 
-#Provide different values for food_type,quantity_ordered,distance_in_kms and test your program
+#Provide different values for food_type,quantity_ordered,distance_in_kms and test your progra
 bill_amount=calculate_bill_amount("N",2,7)
 print(bill_amount)
