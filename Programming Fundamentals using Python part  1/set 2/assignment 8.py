@@ -23,6 +23,8 @@ In case of any invalid data or if the list is empty, display -1.
 def find_max(num1, num2):
     max_num=-1
     # Write your logic here
+    if(num1==num2):
+        return -1
     for num in range(num1,num2+1):
         if len(str(num))!=2 or num%5!=0:
             continue
