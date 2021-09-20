@@ -22,7 +22,7 @@ alex.write("Hello")          # alex says "Hello"
 # Write the logic to take the turtle to its destination
 # Refer the statements given above to draw the pattern
 
-# Provide different values and test your program
+# Provide different values and test your progra
 destination = "south"
 if (destination == "south"):
     alex.right(90)
