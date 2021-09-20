@@ -27,6 +27,6 @@ def calculate_total_ticket_cost(no_of_adults, no_of_children):
     return total_ticket_cost
 
 
-#Provide different values for no_of_adults, no_of_children and test your program
+#Provide different values for no_of_adults, no_of_children and test your progra
 total_ticket_cost=calculate_total_ticket_cost(5,2)
 print("Total Ticket Cost:",total_ticket_cost)
