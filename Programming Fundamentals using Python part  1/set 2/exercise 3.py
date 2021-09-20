@@ -24,6 +24,6 @@ def display(num):
         message="Invalid"
     return message
 
-#Provide different values for num and test your program
+#Provide different values for num and test your progra
 message=display(15)
 print(message)
