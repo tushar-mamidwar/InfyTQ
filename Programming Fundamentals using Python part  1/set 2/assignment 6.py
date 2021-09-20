@@ -40,5 +40,5 @@ def solve(heads,legs):
     #print(chicken_count,rabbit_count)
     #print(error_msg)
 
-#Provide different values for heads and legs and test your program
+#Provide different values for heads and legs and test your progra
 solve(38,131)
