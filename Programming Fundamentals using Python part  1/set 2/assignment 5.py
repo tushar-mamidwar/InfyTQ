@@ -41,14 +41,15 @@ def calculate_loan(account_number,salary,account_balance,loan_type,loan_amount_e
         return
 
     if salary>75000 and loan_type=="Business":
-        eligible_loan_amount=500000
-        bank_emi_expected=36
+        eligible_loan_amount=7500000
+        bank_emi_expected=84
     elif salary>50000 and loan_type=="House":
         eligible_loan_amount=6000000
         bank_emi_expected=60
     elif salary>25000 and loan_type=="Car":
-        eligible_loan_amount=7500000
-        bank_emi_expected=84
+        eligible_loan_amount=500000
+        bank_emi_expected=36
+       
     else:
         print("Invalid loan type or salary")
         return
