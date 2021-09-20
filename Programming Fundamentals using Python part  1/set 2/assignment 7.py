@@ -22,7 +22,7 @@ for counter in range(1,3):
 '''
 
 # Write the logic to create the given pattern
-# Refer the statements given above to draw the pattern
+# Refer the statements given above to draw the patter
 colours=("green","red","blue")
 for colour in colours:
     alex.color(colour)
