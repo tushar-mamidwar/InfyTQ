@@ -18,7 +18,7 @@ def form_triangle(num1,num2,num3):
         return success
     #Write your logic here
 
-    #Use the following messages to return the result wherever necessary
+    #Use the following messages to return the result wherever necessar
 
 
 #Provide different values for the variables, num1, num2, num3 and test your program
