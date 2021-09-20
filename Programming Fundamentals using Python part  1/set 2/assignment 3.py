@@ -43,5 +43,5 @@ def make_amount(rupees_to_make,no_of_five,no_of_one):
     #print(-1)
 
 
-#Provide different values for rupees_to_make,no_of_five,no_of_one and test your program
+#Provide different values for rupees_to_make,no_of_five,no_of_one and test your progra
 make_amount(19,3,3)
