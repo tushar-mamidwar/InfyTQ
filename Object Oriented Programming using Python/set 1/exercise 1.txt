@@ -1,0 +1,17 @@
+Exercise :
+
+Jack (24 years old) and Jill (27 years old) are two employees working in a multi-national company. They draw salaries 30000 and 40000 respectively.
+
+Identify the class name and attributes so as to represent Jack and Jill from the list given. Drag and drop the chosen class name and attributes into the appropriate section of the box shown below.
+ 
+ 
+Options:				ClassName:						
+ Jill					 Employee  		
+ Jack						
+					Attributes:
+					   name
+					  salary
+					   age
+
+					 Methods:
+				        __init__()

@@ -1,0 +1,22 @@
+Assignment:30 mins
+WeCare insurance company wants to calculate premium of vehicles.
+Vehicles are of two types – "Two Wheeler" and "Four Wheeler". Each vehicle is identified by vehicle id, type, cost and premium amount.
+Premium amount is 2% of the vehicle cost for two wheelers and 6% of the vehicle cost for four wheelers. Calculate the premium amount and display the vehicle details.
+
+Identify the class name and attributes to represent vehicles. Drag and drop the chosen class name, attributes and methods into the appropriate section of the box shown below.
+
+
+
+Options:				ClassName:
+TwoWheeler				 Vehicle
+calculate_vehicle_cost()
+premium_percentage			Attributes:
+FourWheeler			       vehicle_type
+					vehicle_id
+				       vehicle_cost
+				      premium_amount
+
+					Methods:
+				       __init__()
+				   calculate_premium()
+				 display_vehicle_details()

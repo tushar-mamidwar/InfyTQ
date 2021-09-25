@@ -1,0 +1,18 @@
+Exercise:20 min
+A vehicle is identified by its mileage (in kms per litre) and fuel left (in litres) in the vehicle. From the fuel left, 5 litres will always be considered as reserve fuel. At any point of time, the driver of the vehicle may want to know:
+the maximum distance that can be covered without using the reserve fuel
+how many kms he/she has already travelled based on the initial fuel the vehicle had
+
+Identify the class name and attributes so as to represent a vehicle from the information given above. Drag and drop the chosen class name, attributes and methods into the appropriate section of the box shown below.
+
+Options:					ClassName:
+Car						 Vehicle	
+
+						Attributes:
+						 fuel_left
+						  mileage
+						
+						  Methods:
+				   identify_distance_travelled(initial_fuel)
+				   identify_distance_that_can_be_travelled()
+						 __init__()

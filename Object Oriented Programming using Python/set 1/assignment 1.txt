@@ -1,0 +1,13 @@
+Q1 of 1
+Consider the below scenario of a retail store. 
+
+                                       
+
+Analyze the scenario and identify minimum three different objects.
+
+☑ customer
+   description
+   purchases
+☑ item
+   pays_bill
+☑employee
