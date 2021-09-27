@@ -5,9 +5,9 @@ Consider the below scenario of a retail store.
 
 Analyze the scenario and identify minimum three different objects.
 
-☑ customer
+☑  customer
    description
    purchases
-☑ item
+☑  item
    pays_bill
-☑employee
+☑  employee

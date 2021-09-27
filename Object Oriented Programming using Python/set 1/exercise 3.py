@@ -20,21 +20,25 @@ Assume that initial fuel is always greater than fuel left.
 
 Represent a vehicle and test your program by initializing the instance variables and invoking the appropriate methods.
 """
+
+
 class Vehicle:
     def __init__(self):
-        self.mileage=None
-        self.fuel_left=None
+        self.mileage = None
+        self.fuel_left = None
+
     def identify_distance_that_can_be_travelled(self):
-        if self.fuel_left<=5:
+        if self.fuel_left <= 5:
             return 0
         else:
-            return (self.fuel_left-5)*self.mileage
+            return (self.fuel_left - 5) * self.mileage
 
-    def identify_distance_travelled(self,initial_fuel):
-        return (initial_fuel-self.fuel_left)*self.mileage
+    def identify_distance_travelled(self, initial_fuel):
+        return (initial_fuel - self.fuel_left) * self.mileage
 
-car=Vehicle()
-car.mileage=20
-car.fuel_left=15
+
+car = Vehicle()
+car.mileage = 20
+car.fuel_left = 15
 print(car.identify_distance_that_can_be_travelled())
 print(car.identify_distance_travelled(20))
