@@ -3,7 +3,7 @@ WeCare insurance company wants to calculate premium of vehicles.
 Vehicles are of two types – "Two Wheeler" and "Four Wheeler". Each vehicle is identified by vehicle id, type, cost and premium amount.
 Premium amount is 2% of the vehicle cost for two wheelers and 6% of the vehicle cost for four wheelers. Calculate the premium amount and display the vehicle details.
 
-Identify the class name and attributes to represent vehicles. Drag and drop the chosen class name, attributes and methods into the appropriate section of the box shown below.
+Identify the class name and attributes to represent vehicles.  Drag and drop the chosen class name, attributes and methods into the appropriate section of the box shown below.
 
 
 
