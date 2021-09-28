@@ -1,0 +1,18 @@
+Assignment:
+Animal Welfare Trust is on a visit to the circus camp to have a look at the four talking parrots added to the camp.
+
+A parrot is identified by its name and color. Apart from this, the trust has asked to assign a unique number for each parrot. The unique number should begin with 7001 and should be auto-incremented by 1 for every new parrot added to the camp.
+
+Identify the class name and attributes so as to represent parrots from the list given. Drag and drop the chosen class name and attributes into the appropriate section of the box shown below.
+
+Options:				 ClassName:
+beak_color				  Parrot
+Parrots
+					Attributes:
+				      counter->static
+					   color
+				       unique_number
+					   name
+
+					  Methods:
+				    __init__(name,color)
