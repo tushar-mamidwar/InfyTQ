@@ -1,4 +1,4 @@
-Assignment
+
 
 TechWorld, a technology training center, wants to allocate courses for instructors.
 An instructor is identified by name, technology skills, experience and average feedback.

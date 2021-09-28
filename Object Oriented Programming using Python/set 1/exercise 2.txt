@@ -1,4 +1,5 @@
-Exercise:20 min
+Exercise:
+
 A vehicle is identified by its mileage (in kms per litre) and fuel left (in litres) in the vehicle. From the fuel left, 5 litres will always be considered as reserve fuel. At any point of time, the driver of the vehicle may want to know:
 the maximum distance that can be covered without using the reserve fuel
 how many kms he/she has already travelled based on the initial fuel the vehicle had
