@@ -31,34 +31,44 @@ For testing:
 - Display the details
 """
 
+
 class Purchase:
-    list_of_items=['Apple', 'Biscuits', 'Chocolates', 'Jam', 'Butter', 'Milk', 'Soap', 'Hand Sanitizer']
-    list_of_count_of_each_item_sold=[0,0,0,0,0,0,0,0]
+    list_of_items = ['Apple', 'Biscuits', 'Chocolates', 'Jam', 'Butter', 'Milk', 'Soap', 'Hand Sanitizer']
+    list_of_count_of_each_item_sold = [0, 0, 0, 0, 0, 0, 0, 0]
+
     def __init__(self):
-        self.__item_on_offer=None
-        self.__items_purchased=[]
+        self.__item_on_offer = None
+        self.__items_purchased = []
+
     def provide_offer(self):
-        Purchase.list_of_count_of_each_item_sold[Purchase.list_of_items.index("Hand Sanitizer")]+=1
-        self.__item_on_offer= "Hand Sanitizer"
-    def sell_items(self,list_of_items_to_be_purchased):
+        Purchase.list_of_count_of_each_item_sold[Purchase.list_of_items.index("Hand Sanitizer")] += 1
+        self.__item_on_offer = "Hand Sanitizer"
+
+    def sell_items(self, list_of_items_to_be_purchased):
         for i in range(len(list_of_items_to_be_purchased)):
-            list_of_items_to_be_purchased[i]=list_of_items_to_be_purchased[i].title()
+            list_of_items_to_be_purchased[i] = list_of_items_to_be_purchased[i].title()
             if list_of_items_to_be_purchased[i] in Purchase.list_of_items:
-                Purchase.list_of_count_of_each_item_sold[Purchase.list_of_items.index(list_of_items_to_be_purchased[i])]+=1
+                Purchase.list_of_count_of_each_item_sold[
+                    Purchase.list_of_items.index(list_of_items_to_be_purchased[i])] += 1
                 self.__items_purchased.append(list_of_items_to_be_purchased[i])
 
         if "Soap" in list_of_items_to_be_purchased:
             self.provide_offer()
+
     @staticmethod
     def find_total_items_sold():
-        sum=0
+        sum = 0
         for i in Purchase.list_of_count_of_each_item_sold:
-            sum+=i
+            sum += i
         return sum
+
     def get_item_on_offer(self):
         return self.__item_of_offer
+
     def get_items_purchased(self):
         return self.__items_purchased
-purchase1=Purchase()
+
+
+purchase1 = Purchase()
 purchase1.sell_items(['JAM', 'CHOcolates', 'Ghee', 'Soap'])
 print(purchase1.get_item_of_offer())

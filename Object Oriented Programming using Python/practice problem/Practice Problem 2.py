@@ -45,55 +45,65 @@ For testing:
 
 """
 
+
 class Dog:
-    counter=100
-    dog_breed_dict={"Labrador Retriever":5,"German Shepherd":12,"Beagle":10}
-    def __init__(self,breed_list,accessories_required):
-        self.__dog_id_list=[]
-        self.__breed_list=breed_list
-        self.__accessories_required=accessories_required
-        self.__price=0
+    counter = 100
+    dog_breed_dict = {"Labrador Retriever": 5, "German Shepherd": 12, "Beagle": 10}
+
+    def __init__(self, breed_list, accessories_required):
+        self.__dog_id_list = []
+        self.__breed_list = breed_list
+        self.__accessories_required = accessories_required
+        self.__price = 0
+
     def get_dog_id_list(self):
         return self.__dog_id_list
+
     def get_breed_list(self):
         return self.__breed_list
+
     def get_price(self):
         return self.__price
+
     def get_accessories_required(self):
         return self.__accessories_required
-    def get_dog_price(self,breed):
-        price_dict={"Labrador Retriever":800,"German Shepherd":1230,"Beagle":650}
+
+    def get_dog_price(self, breed):
+        price_dict = {"Labrador Retriever": 800, "German Shepherd": 1230, "Beagle": 650}
         return price_dict[breed]
-    def generate_dog_id(self,breed):
-        Dog.counter+=1
-        return breed[0]+str(Dog.counter)
+
+    def generate_dog_id(self, breed):
+        Dog.counter += 1
+        return breed[0] + str(Dog.counter)
+
     def validate_breed(self):
         for each_breed in self.__breed_list:
             if not each_breed in Dog.dog_breed_dict:
                 return False
         return True
+
     def validate_quantity(self):
         for each_breed in self.__breed_list:
             if not Dog.dog_breed_dict[each_breed]:
                 return False
         return True
+
     def calculate_total_price(self):
         if self.validate_breed():
             if self.validate_quantity():
                 for each_dog in self.__breed_list:
-                    Dog.dog_breed_dict[each_dog]-=1
+                    Dog.dog_breed_dict[each_dog] -= 1
                     self.__dog_id_list.append(self.generate_dog_id(each_dog))
-                    self.__price+=self.get_dog_price(each_dog)
+                    self.__price += self.get_dog_price(each_dog)
                 if self.__accessories_required:
-                    self.__price+=350
-                if self.__price>1500:
-                    self.__price*=0.95
+                    self.__price += 350
+                if self.__price > 1500:
+                    self.__price *= 0.95
                 return
             return -2
         return -1
-dog=Dog(["Labrador Retriever","Beagle"],True)
+
+
+dog = Dog(["Labrador Retriever", "Beagle"], True)
 print(dog.calculate_total_price())
 print(dog.get_price())
-
-
-
