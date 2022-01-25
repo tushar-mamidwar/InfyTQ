@@ -1,0 +1,22 @@
+Question:
+By playing the number guessing game, you have actually searched for a number in a list of numbers using a
+simple search algorithm.
+
+Here are the set of steps that forms that algorithm but provided in a jumbled order. Go through the steps 
+and drag and drop it into the pseudo-code box in the correct sequence.
+
+ANSWER:
+
+Pseudo-code
+initialize number of guesses to 0
+input number to be guessed and list of numbers
+for each number in the list of numbers
+increment number of guesses by 1
+if number is equal to number to be guessed
+display success message
+break
+else
+display try again message
+end-if
+end-for
+display number of guesses
