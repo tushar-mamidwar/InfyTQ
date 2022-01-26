@@ -35,55 +35,70 @@ For testing:
 - Invoke calculate_price() on Cotton objects and Silk objects
 - Display their details
 """
+
+
 class Apparel:
-    counter=100
-    def __init__(self,price,item_type):
-        Apparel.counter+=1
-        self.__item_id=item_type[0]+str(Apparel.counter)
-        self.__price=price
-        self.__item_type=item_type
+    counter = 100
+
+    def __init__(self, price, item_type):
+        Apparel.counter += 1
+        self.__item_id = item_type[0] + str(Apparel.counter)
+        self.__price = price
+        self.__item_type = item_type
 
     def calculate_price(self):
-        self.__price*=1.05
+        self.__price *= 1.05
+
     def get_item_id(self):
         return self.__item_id
+
     def get_item_type(self):
         return self.__item_type
+
     def get_price(self):
         return self.__price
-    def set_price(self,price):
+
+    def set_price(self, price):
         self.__price = price
+
+
 class Cotton(Apparel):
-    def __init__(self,price,discount):
-        self.__discount=discount
-        super().__init__(price,'Cotton')
+    def __init__(self, price, discount):
+        self.__discount = discount
+        super().__init__(price, "Cotton")
+
     def calculate_price(self):
         super().calculate_price()
-        price=self.get_price()
-        price-=self.get_discount()
-        price*=1.05
+        price = self.get_price()
+        price -= self.get_discount()
+        price *= 1.05
         self.set_price(price)
+
     def get_discount(self):
-        return self.get_price()*self.__discount/100
+        return self.get_price() * self.__discount / 100
+
 
 class Silk(Apparel):
-    def __init__(self,price):
-        self.__points=0
-        super().__init__(price,'Silk')
+    def __init__(self, price):
+        self.__points = 0
+        super().__init__(price, "Silk")
+
     def calculate_price(self):
         super().calculate_price()
-        price=self.get_price()
-        if price>10000:
-            self.__points+=10
+        price = self.get_price()
+        if price > 10000:
+            self.__points += 10
         else:
-            self.__points+=3
-        self.set_price(price*1.1)
+            self.__points += 3
+        self.set_price(price * 1.1)
+
     def get_points(self):
         return self.__points
 
-cotton=Cotton(340,10)
-silk=Silk(405)
+
+cotton = Cotton(340, 10)
+silk = Silk(405)
 cotton.calculate_price()
 silk.calculate_price()
-print(cotton.get_item_id(),cotton.get_item_type(),cotton.get_price())
-print(silk.get_item_id(),silk.get_item_type(),silk.get_price())
+print(cotton.get_item_id(), cotton.get_item_type(), cotton.get_price())
+print(silk.get_item_id(), silk.get_item_type(), silk.get_price())

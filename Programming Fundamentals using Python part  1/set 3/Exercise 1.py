@@ -16,6 +16,7 @@ Sample Input                                Expected Output
 
 # lex_auth_012693750719488000124
 
+
 def get_count(num_list):
     count = 0
     for i in range(len(num_list) - 1):

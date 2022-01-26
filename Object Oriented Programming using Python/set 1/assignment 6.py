@@ -69,7 +69,12 @@ class Instructor:
         return self.__instructor_name
 
     def check_eligibility(self):
-        if self.__experience > 3 and self.__avg_feedback >= 4.5 or self.__experience <= 3 and self.__avg_feedback >= 4:
+        if (
+            self.__experience > 3
+            and self.__avg_feedback >= 4.5
+            or self.__experience <= 3
+            and self.__avg_feedback >= 4
+        ):
             return True
         else:
             return False
@@ -82,7 +87,7 @@ class Instructor:
 
 
 instructor1 = Instructor()
-instructor1._Instructor__instructor_name = 'demo1'
+instructor1._Instructor__instructor_name = "demo1"
 instructor1._Instructor__experience = 3
 instructor1._Instructor__avg_feedback = 4.5
 instructor1._Instructor__technology_skill = ["java", "python"]

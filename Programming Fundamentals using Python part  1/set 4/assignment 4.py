@@ -24,24 +24,26 @@ Sample Input                                     Expected Output
 [101,O,102,E,302,P,305,P,401,E,656,O,987,E]             ENT
 """
 
-#lex_auth_012693816757551104165
+# lex_auth_012693816757551104165
 
-def max_visited_speciality(patient_medical_speciality_list,medical_speciality):
+
+def max_visited_speciality(patient_medical_speciality_list, medical_speciality):
     # write your logic here
-    patient_count={'P':0,'O':0,'E':0}
-    for i in range(1,len(patient_medical_speciality_list),2):
-        patient_count[patient_medical_speciality_list[i]]+=1
-    max_key=''
-    max_value=0
-    for speciality,frequency in patient_count.items():
+    patient_count = {"P": 0, "O": 0, "E": 0}
+    for i in range(1, len(patient_medical_speciality_list), 2):
+        patient_count[patient_medical_speciality_list[i]] += 1
+    max_key = ""
+    max_value = 0
+    for speciality, frequency in patient_count.items():
         if frequency > max_value:
-            max_value=frequency
-            max_key=speciality
+            max_value = frequency
+            max_key = speciality
     return medical_speciality[max_key]
     return speciality
 
-#provide different values in the list and test your program
-patient_medical_speciality_list=[301,'P',302, 'P' ,305, 'P' ,401, 'E' ,656, 'E']
-medical_speciality={"P":"Pediatrics","O":"Orthopedics","E":"ENT"}
-speciality=max_visited_speciality(patient_medical_speciality_list,medical_speciality)
+
+# provide different values in the list and test your program
+patient_medical_speciality_list = [301, "P", 302, "P", 305, "P", 401, "E", 656, "E"]
+medical_speciality = {"P": "Pediatrics", "O": "Orthopedics", "E": "ENT"}
+speciality = max_visited_speciality(patient_medical_speciality_list, medical_speciality)
 print(speciality)

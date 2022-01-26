@@ -69,13 +69,19 @@ class Flower:
         return False
 
     def sell_flower(self, required_quantity):
-        if self.validate_flower() and self.validate_stock(
-                required_quantity) and self.__stock_available >= required_quantity:
+        if (
+            self.validate_flower()
+            and self.validate_stock(required_quantity)
+            and self.__stock_available >= required_quantity
+        ):
             self.__stock_available -= required_quantity
 
     def check_level(self):
         order_level = {"Orchid": 15, "Rose": 25, "Jasmine": 40}
-        if self.validate_flower() and self.__stock_available < order_level[self.__flower_name.title()]:
+        if (
+            self.validate_flower()
+            and self.__stock_available < order_level[self.__flower_name.title()]
+        ):
             return True
         return False
 

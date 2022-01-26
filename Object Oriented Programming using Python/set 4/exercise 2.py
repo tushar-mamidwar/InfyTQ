@@ -29,25 +29,32 @@ make them ride the respective vehicles.
 Note: rides_vehicle(), rides_in_dome(), rides_blindfolded() methods should display appropriate messages.
 Assume that trained_status and race_license are boolean variables and experience is an integer.
 """
+
+
 class Rider:
-    def __init__(self,trained_status,experience):
-        self.__trained_status=trained_status
+    def __init__(self, trained_status, experience):
+        self.__trained_status = trained_status
         self.__experience = experience
+
     def rides_vehicle(self):
         print("Rides vehicle")
 
+
 class BikeRider(Rider):
-    def __init__(self,trained_status,experience,race_license):
-        super().__init__(trained_status,experience)
+    def __init__(self, trained_status, experience, race_license):
+        super().__init__(trained_status, experience)
         self.__race_license = race_license
+
     def rides_in_dome(self):
         print("Bike Rider Rides in dome")
+
 
 class CycleRider(Rider):
     def rides_blindfolded(self):
         print("Cycle Rider rides blindfolded")
 
-cycle_rider=CycleRider(True,4)
+
+cycle_rider = CycleRider(True, 4)
 cycle_rider.rides_blindfolded()
-bike_rider=BikeRider(True,3,True)
+bike_rider = BikeRider(True, 3, True)
 bike_rider.rides_in_dome()

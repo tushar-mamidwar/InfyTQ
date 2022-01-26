@@ -74,13 +74,22 @@ class LabTestRepository:
     def get_test_charge(lab_test_id):
         if lab_test_id in LabTestRepository.__list_of_hospital_lab_test_ids:
             return LabTestRepository.__list_of_lab_test_charge[
-                LabTestRepository.__list_of_hospital_lab_test_ids.index(lab_test_id)]
+                LabTestRepository.__list_of_hospital_lab_test_ids.index(lab_test_id)
+            ]
         else:
             return -1
 
 
-lab_test_list1 = ["L101", "L103", "L104", 'L105']
+lab_test_list1 = ["L101", "L103", "L104", "L105"]
 patient1 = Patient(1010, "Sam", lab_test_list1)
 patient1.calculate_lab_test_charge()
-print("Patient id:", patient1.get_patient_id(), "\nPatient name:", patient1.get_patient_name(), "\nPatient's test ids:",
-      patient1.get_list_of_lab_test_ids(), "\nTotal lab test charge:", patient1.get_lab_test_charge())
+print(
+    "Patient id:",
+    patient1.get_patient_id(),
+    "\nPatient name:",
+    patient1.get_patient_name(),
+    "\nPatient's test ids:",
+    patient1.get_list_of_lab_test_ids(),
+    "\nTotal lab test charge:",
+    patient1.get_lab_test_charge(),
+)

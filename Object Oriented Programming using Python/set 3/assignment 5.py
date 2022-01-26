@@ -65,9 +65,11 @@ class Bill:
         for item_id in item_quantity:
             for item in items:
                 if item_id.lower() == item.get_item_id().lower():
-                    self.__bill_amount += item_quantity[item_id] * item.get_price_per_quantity()
+                    self.__bill_amount += (
+                        item_quantity[item_id] * item.get_price_per_quantity()
+                    )
         Bill.counter += 1
-        self.__bill_id = 'B' + str(Bill.counter)
+        self.__bill_id = "B" + str(Bill.counter)
 
     def get_bill_id(self):
         return self.__bill_id

@@ -106,9 +106,9 @@ maddy = Student()
 maddy.set_student_id(1001)
 maddy.set_age(21)
 maddy.set_marks(65)
-if (maddy.check_qualification()):
+if maddy.check_qualification():
     print("Student has qualified")
-    if (maddy.choose_course(1002)):
+    if maddy.choose_course(1002):
         print("Course allocated")
     else:
         print("Invalid course id")

@@ -1,6 +1,6 @@
-'''
+"""
 Using the swap() and find_next_min() functions, implement the selection sort algorithm to sort a list of numbers in ascending order.
-'''
+"""
 # lex_auth_0127667356693872643343
 
 
@@ -15,7 +15,7 @@ def find_next_min(num_list, start_index):
     # Remove pass and copy the code written earlier for this function
     min = num_list[start_index]
     min_index = start_index
-    for i in range(start_index+1, len(num_list)):
+    for i in range(start_index + 1, len(num_list)):
         if num_list[i] < min:
             min = num_list[i]
             min_index = i

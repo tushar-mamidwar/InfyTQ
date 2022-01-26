@@ -50,7 +50,12 @@ class Freight:
         return False
 
     def forward_cargo(self):
-        if self.__from_customer.validate_customer_id() and self.__recipient_customer.validate_customer_id() and self.validate_distance() and self.validate_weight():
+        if (
+            self.__from_customer.validate_customer_id()
+            and self.__recipient_customer.validate_customer_id()
+            and self.validate_distance()
+            and self.validate_weight()
+        ):
             Freight.counter += 2
             self.__freight_id = Freight.counter
             self.__freight_charge = (self.__weight * 150) + (self.__distance * 60)
@@ -84,7 +89,7 @@ class Customer:
 
     def validate_customer_id(self):
         customer_id = str(self.__customer_id)
-        if len(customer_id) == 6 and customer_id[0] == '1':
+        if len(customer_id) == 6 and customer_id[0] == "1":
             return True
         return False
 

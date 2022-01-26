@@ -1,4 +1,4 @@
-'''
+"""
 Given a stack of boxes in different colors. Write a python function that accepts the stack of boxes and removes those boxes having color other than the primary colors (Red, Green and Blue) from the stack. The removed boxes should be en-queued into a new queue and returned. The original stack should have only the boxes having primary colors and the order must be maintained.
 
  
@@ -6,7 +6,7 @@ Perform case sensitive string comparison wherever necessary.
 
 
 Note: Consider the queue to be of the same size as that of the original stack
-'''
+"""
 # lex_auth_0127667363049881603477
 
 """*********************Queue*****************************"""
@@ -16,29 +16,29 @@ class Queue:
     def __init__(self, max_size):
 
         self.__max_size = max_size
-        self.__elements = [None]*self.__max_size
+        self.__elements = [None] * self.__max_size
         self.__rear = -1
         self.__front = 0
 
     def is_full(self):
-        if(self.__rear == self.__max_size-1):
+        if self.__rear == self.__max_size - 1:
             return True
         return False
 
     def is_empty(self):
-        if(self.__front > self.__rear):
+        if self.__front > self.__rear:
             return True
         return False
 
     def enqueue(self, data):
-        if(self.is_full()):
+        if self.is_full():
             print("Queue is full!!!")
         else:
             self.__rear += 1
             self.__elements[self.__rear] = data
 
     def dequeue(self):
-        if(self.is_empty()):
+        if self.is_empty():
             print("Queue is empty!!!")
         else:
             data = self.__elements[self.__front]
@@ -46,7 +46,7 @@ class Queue:
             return data
 
     def display(self):
-        for index in range(self.__front, self.__rear+1):
+        for index in range(self.__front, self.__rear + 1):
             print(self.__elements[index])
 
     def get_max_size(self):
@@ -56,11 +56,11 @@ class Queue:
     def __str__(self):
         msg = []
         index = self.__front
-        while(index <= self.__rear):
+        while index <= self.__rear:
             msg.append((str)(self.__elements[index]))
             index += 1
         msg = " ".join(msg)
-        msg = "Queue data(Front to Rear): "+msg
+        msg = "Queue data(Front to Rear): " + msg
         return msg
 
 
@@ -70,28 +70,28 @@ class Queue:
 class Stack:
     def __init__(self, max_size):
         self.__max_size = max_size
-        self.__elements = [None]*self.__max_size
+        self.__elements = [None] * self.__max_size
         self.__top = -1
 
     def is_full(self):
-        if(self.__top == self.__max_size-1):
+        if self.__top == self.__max_size - 1:
             return True
         return False
 
     def is_empty(self):
-        if(self.__top == -1):
+        if self.__top == -1:
             return True
         return False
 
     def push(self, data):
-        if(self.is_full()):
+        if self.is_full():
             print("The stack is full!!")
         else:
             self.__top += 1
             self.__elements[self.__top] = data
 
     def pop(self):
-        if(self.is_empty()):
+        if self.is_empty():
             print("The stack is empty!!")
         else:
             data = self.__elements[self.__top]
@@ -99,11 +99,11 @@ class Stack:
             return data
 
     def display(self):
-        if(self.is_empty()):
+        if self.is_empty():
             print("The stack is empty")
         else:
             index = self.__top
-            while(index >= 0):
+            while index >= 0:
                 print(self.__elements[index])
                 index -= 1
 
@@ -114,11 +114,11 @@ class Stack:
     def __str__(self):
         msg = []
         index = self.__top
-        while(index >= 0):
+        while index >= 0:
             msg.append((str)(self.__elements[index]))
             index -= 1
         msg = " ".join(msg)
-        msg = "Stack data(Top to Bottom): "+msg
+        msg = "Stack data(Top to Bottom): " + msg
         return msg
 
 
@@ -127,7 +127,7 @@ def separate_boxes(box_stack):
     other_color_queue = Queue(box_stack.get_max_size())
     while not box_stack.is_empty():
         box = box_stack.pop()
-        if box != 'Red' and box != 'Green' and box != 'Blue':
+        if box != "Red" and box != "Green" and box != "Blue":
             other_color_queue.enqueue(box)
         else:
             temp_stack.push(box)

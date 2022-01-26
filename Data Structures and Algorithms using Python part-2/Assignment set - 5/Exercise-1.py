@@ -1,9 +1,9 @@
-'''
+"""
 Problem Statement
 Now we know that comparison and swapping are two basic operations required for sorting, let’s write a function to swap two numbers in a list.
 
 Complete the given function by following the instructions provided in template code. Test your code by passing different values for num_list, first_index and second_index.
-'''
+"""
 # lex_auth_0127667345256611843470
 
 

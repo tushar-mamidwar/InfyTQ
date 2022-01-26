@@ -38,7 +38,11 @@ class Ticket:
 
     def validate_source_destination(self):
         if self.__source.title() == "Delhi" and (
-                self.__destination.title() == "Mumbai" or self.__destination.title() == "Pune" or self.__destination.title() == "Kolkata" or self.__destination.title() == "Chennai"):
+            self.__destination.title() == "Mumbai"
+            or self.__destination.title() == "Pune"
+            or self.__destination.title() == "Kolkata"
+            or self.__destination.title() == "Chennai"
+        ):
             return True
         else:
             return False
@@ -46,7 +50,11 @@ class Ticket:
     def generate_ticket(self):
         if self.validate_source_destination():
             Ticket.counter += 1
-            self.__ticket_id = self.__source[0] + self.__destination[0] + "{:02d}".format(Ticket.counter)
+            self.__ticket_id = (
+                self.__source[0]
+                + self.__destination[0]
+                + "{:02d}".format(Ticket.counter)
+            )
         else:
             return False
 
@@ -68,5 +76,9 @@ ticket = passenger.generate_ticket()
 if ticket == False:
     print("Invalid Input")
 else:
-    print(passenger.get_passenger_name(), passenger.get_ticket_id(), passenger.get_source(),
-          passenger.get_destination())
+    print(
+        passenger.get_passenger_name(),
+        passenger.get_ticket_id(),
+        passenger.get_source(),
+        passenger.get_destination(),
+    )

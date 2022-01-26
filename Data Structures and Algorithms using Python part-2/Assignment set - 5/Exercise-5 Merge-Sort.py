@@ -1,7 +1,7 @@
-'''
+"""
 Problem Statement
 Implement the merge sort algorithm to sort a list of numbers in ascending order.
-'''
+"""
 # lex_auth_0127667368801157123532
 
 
@@ -9,8 +9,8 @@ def merge_sort(num_list):
     # Remove pass and write the logic here to return the sorted list
     if len(num_list) == 1:
         return num_list
-    left_list = num_list[:len(num_list)//2]
-    right_list = num_list[len(num_list)//2:]
+    left_list = num_list[: len(num_list) // 2]
+    right_list = num_list[len(num_list) // 2 :]
     sorted_left_list = merge_sort(left_list)
     sorted_right_list = merge_sort(right_list)
     merged_list = merge(sorted_left_list, sorted_right_list)

@@ -55,7 +55,7 @@ class Security:
         if employee in Security.employee_list:
             index = Security.employee_list.index(employee)
             if Security.visitor_list[index] == visitor:
-                valid_id_proofs = ('Passport', 'Voter Id', 'PAN Card')
+                valid_id_proofs = ("Passport", "Voter Id", "PAN Card")
                 if visitor.get_valid_id() in valid_id_proofs:
                     return True
                 return False

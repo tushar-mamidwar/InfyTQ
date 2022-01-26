@@ -1,5 +1,6 @@
 # lex_auth_0127667326864670723497
 
+
 def find_unknown_words(text, vocabulary):
     text = text.split()
     new_words = []

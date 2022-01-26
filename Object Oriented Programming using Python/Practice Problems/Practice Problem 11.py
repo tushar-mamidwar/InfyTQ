@@ -36,7 +36,9 @@ Create objects of Student and Consultant class, invoke appropriate methods and t
 
 
 class Consultant:
-    def __init__(self, name, registered_company_list, vacancy_list, registered_student_dict):
+    def __init__(
+        self, name, registered_company_list, vacancy_list, registered_student_dict
+    ):
         self.__name = name
         self.__registered_company_list = registered_company_list
         self.__vacancy_list = vacancy_list
@@ -63,7 +65,9 @@ class Consultant:
 
     def register_student_for_placement(self, index, student_id):
         self.__vacancy_list[index] -= 1
-        self.__registered_student_dict[self.__registered_company_list[index]].append(student_id)
+        self.__registered_student_dict[self.__registered_company_list[index]].append(
+            student_id
+        )
 
 
 class Student:
@@ -102,8 +106,12 @@ class Student:
             return -1
 
 
-consultant = Consultant("Consultant1", ["TCS", "Infosys", "Campegini", "Accenture"], [5, 4, 6, 0],
-                        {"TCS": [], "Infosys": [], "Campegini": [], "Accenture": []})
+consultant = Consultant(
+    "Consultant1",
+    ["TCS", "Infosys", "Campegini", "Accenture"],
+    [5, 4, 6, 0],
+    {"TCS": [], "Infosys": [], "Campegini": [], "Accenture": []},
+)
 
 student = Student("Student1", 1234, "CS", 78, 2015)
 print(student.apply_for_job("TCS", consultant))

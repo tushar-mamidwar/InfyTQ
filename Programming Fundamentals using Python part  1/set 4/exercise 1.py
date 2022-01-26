@@ -12,21 +12,28 @@ That is, write a python function translate() that accepts the bilingual dictiona
 list of English words (your Christmas wish) and returns a list of equivalent Swedish words.
 """
 
-#lex_auth_012693774187716608134
+# lex_auth_012693774187716608134
 
-def translate(bilingual_dict,english_words_list):
-    swedish_words_list=[]
-    for i in range(0,len(english_words_list)):
+
+def translate(bilingual_dict, english_words_list):
+    swedish_words_list = []
+    for i in range(0, len(english_words_list)):
         swedish_words_list.append(bilingual_dict[english_words_list[i]])
-
 
     return swedish_words_list
 
 
-bilingual_dict= {"merry":"god", "christmas":"jul", "and":"och", "happy":"gott", "new":"nytt", "year":"ar"}
-english_words_list=["merry","christmas"]
-print("The bilingual dict is:",bilingual_dict)
-print("The english words are:",english_words_list)
+bilingual_dict = {
+    "merry": "god",
+    "christmas": "jul",
+    "and": "och",
+    "happy": "gott",
+    "new": "nytt",
+    "year": "ar",
+}
+english_words_list = ["merry", "christmas"]
+print("The bilingual dict is:", bilingual_dict)
+print("The english words are:", english_words_list)
 
-swedish_words_list=translate(bilingual_dict, english_words_list)
-print("The equivalent swedish words are:",swedish_words_list)
+swedish_words_list = translate(bilingual_dict, english_words_list)
+print("The equivalent swedish words are:", swedish_words_list)

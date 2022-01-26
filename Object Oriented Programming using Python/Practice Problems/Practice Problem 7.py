@@ -46,7 +46,7 @@ class Employee:
 
     def generate_employee_id(self):
         Employee.__employee_count += 1
-        self.__employee_id = 'E' + str(Employee.__employee_count)
+        self.__employee_id = "E" + str(Employee.__employee_count)
 
     def get_employee_id(self):
         return self.__employee_id

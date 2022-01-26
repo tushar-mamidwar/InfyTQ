@@ -1,4 +1,4 @@
-'''
+"""
 Problem Statement
 Let’s compare selection sort and bubble sort algorithms in this exercise.
 
@@ -9,7 +9,7 @@ Invoke both the functions (selection_sort() and bubble_sort()) using the followi
 Case 1: [8,2,19,34,23, 67, 91]
 
 Case 2: [91,8,19,23,34,67,2]
-'''
+"""
 
 # lex_auth_0127667385791856643328
 
@@ -25,7 +25,7 @@ def find_next_min(num_list, start_index):
     # Remove pass and copy the code earlier written for this function
     min = num_list[start_index]
     min_index = start_index
-    for i in range(start_index+1, len(num_list)):
+    for i in range(start_index + 1, len(num_list)):
         if min > num_list[i]:
             min = num_list[i]
             min_index = i
@@ -37,7 +37,7 @@ def selection_sort(num_list):
     # Remove pass and copy the code earlier written for this function
     # Modify it to return the total number of passes the algorithm has gone through to sort the list
     total_no_of_passes = 0
-    for i in range(len(num_list)-1):
+    for i in range(len(num_list) - 1):
         total_no_of_passes += 1
         min_index = find_next_min(num_list, i)
         if i != min_index:
@@ -48,12 +48,12 @@ def selection_sort(num_list):
 def bubble_sort(num_list):
     total_no_of_passes = 0
     end_index = len(num_list)
-    for i in range(end_index-1):
+    for i in range(end_index - 1):
         total_no_of_passes += 1
         swapped = False
-        for j in range(end_index-i-1):
-            if num_list[j] > num_list[j+1]:
-                swap(num_list, j, j+1)
+        for j in range(end_index - i - 1):
+            if num_list[j] > num_list[j + 1]:
+                swap(num_list, j, j + 1)
                 swapped = True
         if swapped == False:
             break

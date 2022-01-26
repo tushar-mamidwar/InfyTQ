@@ -67,7 +67,7 @@ class Logistics(metaclass=ABCMeta):
         return self.__end_reading
 
     def validate_meter_reading(self):
-        if (self.__start_reading < self.__end_reading):
+        if self.__start_reading < self.__end_reading:
             return True
         else:
             return False
@@ -85,8 +85,11 @@ class Logistics(metaclass=ABCMeta):
 
 class PassengerLogistics(Logistics):
     __list_vehicle = ["BMW", "TOYOTA", "FORD"]
-    __list_minimum_charge = [3000, 1500,
-                             1000]  # these lists are storing vehicle type, minimum charge, rate per kilometer for first hundred and rate per kilometer for rest of distance
+    __list_minimum_charge = [
+        3000,
+        1500,
+        1000,
+    ]  # these lists are storing vehicle type, minimum charge, rate per kilometer for first hundred and rate per kilometer for rest of distance
     __list_charge_for_hundred = [30, 15, 10]  # there is a one to one correspondence
     __list_charge_after_hundred = [25, 12, 7]
 
@@ -99,7 +102,7 @@ class PassengerLogistics(Logistics):
 
     def validate_vehicle_type(self):
         for index in range(0, len(PassengerLogistics.__list_vehicle)):
-            if (PassengerLogistics.__list_vehicle[index] == self.__vehicle_type):
+            if PassengerLogistics.__list_vehicle[index] == self.__vehicle_type:
                 return index
         return -1
 
@@ -110,10 +113,16 @@ class PassengerLogistics(Logistics):
             distance_travelled = self.get_end_reading() - self.get_start_reading()
             price = 0
             if distance_travelled <= 100:
-                price = distance_travelled * PassengerLogistics.__list_charge_for_hundred[index]
+                price = (
+                    distance_travelled
+                    * PassengerLogistics.__list_charge_for_hundred[index]
+                )
             else:
-                price = 100 * PassengerLogistics.__list_charge_for_hundred[index] + (distance_travelled - 100) * \
-                        PassengerLogistics.__list_charge_after_hundred[index]
+                price = (
+                    100 * PassengerLogistics.__list_charge_for_hundred[index]
+                    + (distance_travelled - 100)
+                    * PassengerLogistics.__list_charge_after_hundred[index]
+                )
             if price < PassengerLogistics.__list_minimum_charge[index]:
                 price = PassengerLogistics.__list_minimum_charge[index]
             price *= 1.05
@@ -122,8 +131,11 @@ class PassengerLogistics(Logistics):
 
 
 class GoodsLogistics(Logistics):
-    __carrier_dict = {"TATA": 20, "EICHER": 30,
-                      "FORCE": 35}  # stores the carrier type and rate per kilometer for 1000kg
+    __carrier_dict = {
+        "TATA": 20,
+        "EICHER": 30,
+        "FORCE": 35,
+    }  # stores the carrier type and rate per kilometer for 1000kg
 
     def __init__(self, carrier_type, goods_weight, start_reading, end_reading):
         super().__init__(start_reading, end_reading)
@@ -138,20 +150,20 @@ class GoodsLogistics(Logistics):
 
     def validate_carrier_type(self):
         for carrier in GoodsLogistics.__carrier_dict:
-            if (carrier == self.__carrier_type):
+            if carrier == self.__carrier_type:
                 return True
         return False
 
     def calculate_bill_amount(self):
-        if (self.validate_carrier_type()):
-            if (self.validate_meter_reading()):
+        if self.validate_carrier_type():
+            if self.validate_meter_reading():
                 self.generate_consumer_id()
                 total_distance = self.get_end_reading() - self.get_start_reading()
-                if (self.__goods_weight <= 1000):
+                if self.__goods_weight <= 1000:
                     charge_per_kilometer = self.__carrier_dict[self.__carrier_type]
-                elif (self.__goods_weight > 1000 and self.__goods_weight <= 2000):
+                elif self.__goods_weight > 1000 and self.__goods_weight <= 2000:
                     charge_per_kilometer = self.__carrier_dict[self.__carrier_type] * 2
-                elif (self.__goods_weight > 2000 and self.__goods_weight <= 3000):
+                elif self.__goods_weight > 2000 and self.__goods_weight <= 3000:
                     charge_per_kilometer = self.__carrier_dict[self.__carrier_type] * 4
                 else:
                     charge_per_kilometer = 200
@@ -166,7 +178,7 @@ class GoodsLogistics(Logistics):
 
 passenger_logistic = PassengerLogistics("BMW", 300, 400)
 bill_amount = passenger_logistic.calculate_bill_amount()
-if (bill_amount == -1):
+if bill_amount == -1:
     print("Invalid vehicle type or meter reading ")
 else:
     print("Consumer id    :", passenger_logistic.get_consumer_id())
@@ -176,7 +188,7 @@ else:
 print("------------------------------------------------------------")
 goods_logistic = GoodsLogistics("FORCE", 3000, 300, 400)
 bill_amount = goods_logistic.calculate_bill_amount()
-if (bill_amount == -1):
+if bill_amount == -1:
     print("Invalid career type or meter reading ")
 else:
     print("Consumer id    :", goods_logistic.get_consumer_id())

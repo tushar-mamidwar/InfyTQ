@@ -79,7 +79,10 @@ class Pizzaservice:
         self.__service_id = None
 
     def validate_pizza_type(self):
-        if self.__pizza_type.lower() == "small" or self.__pizza_type.lower() == "medium":
+        if (
+            self.__pizza_type.lower() == "small"
+            or self.__pizza_type.lower() == "medium"
+        ):
             return True
         return False
 
@@ -147,7 +150,7 @@ class Doordelivery(Pizzaservice):
 
 
 cus1 = Customer("cus1", 3)
-pizza = Doordelivery(cus1, 'mediumm', True, 8)
+pizza = Doordelivery(cus1, "mediumm", True, 8)
 pizza.calculate_pizza_cost()
 print(pizza.pizza_cost)
 print(pizza.get_delivery_charges())

@@ -27,8 +27,12 @@ from datetime import date, timedelta
 
 
 class GarmentOrder:
-    garment_dict = {"shirt": [45, 400, 30], "trousers": [250, 500, 25], "saree": [500, 750, 10],
-                    "jersey": [750, 200, 5]}
+    garment_dict = {
+        "shirt": [45, 400, 30],
+        "trousers": [250, 500, 25],
+        "saree": [500, 750, 10],
+        "jersey": [750, 200, 5],
+    }
 
     def __init__(self, no_of_piece, cloth_type):
         self.__order_date = time.strftime("%d/%m/%Y")
@@ -40,13 +44,17 @@ class GarmentOrder:
         return GarmentOrder.garment_dict[self.__cloth_type][1] * self.__no_of_piece
 
     def update_stock(self):
-        self.__delivery_date = date.today() + timedelta(days=GarmentOrder.garment_dict[self.__cloth_type][2])
+        self.__delivery_date = date.today() + timedelta(
+            days=GarmentOrder.garment_dict[self.__cloth_type][2]
+        )
         self.__delivery_date = self.__delivery_date.strftime("%d/%m/%Y")
         GarmentOrder.garment_dict[self.__cloth_type][0] -= self.__no_of_piece
 
     def take_order(self):
-        if self.__cloth_type in GarmentOrder.garment_dict and GarmentOrder.garment_dict[self.__cloth_type][
-            0] >= self.__no_of_piece:
+        if (
+            self.__cloth_type in GarmentOrder.garment_dict
+            and GarmentOrder.garment_dict[self.__cloth_type][0] >= self.__no_of_piece
+        ):
             self.update_stock()
             return self.calculate_amount()
         return -1

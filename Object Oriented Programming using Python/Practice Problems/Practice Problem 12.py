@@ -59,7 +59,7 @@ class PostMan:
     def __init__(self, name):
         PostMan.counter += 1
         self.__name = name
-        self.postman_id = 'P' + str(PostMan.counter)
+        self.postman_id = "P" + str(PostMan.counter)
         self.__post_list_to_deliver = []
 
     def get_post_list_to_deliver(self):
@@ -105,7 +105,9 @@ letter5 = Letter("sector1", "sector1")
 postman1 = PostMan("name1")
 postman2 = PostMan("name2")
 postman3 = PostMan("name3")
-postoffice = PostOffice(["sector1", "sector2", "sector3"], [postman1, postman2, postman3])
+postoffice = PostOffice(
+    ["sector1", "sector2", "sector3"], [postman1, postman2, postman3]
+)
 postoffice.allocate_posts([letter1, letter2, letter3, letter4, letter5])
 print(postman1.get_post_list_to_deliver())
 print(postman2.get_post_list_to_deliver())

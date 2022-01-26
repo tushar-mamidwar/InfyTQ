@@ -46,7 +46,7 @@ Perform case sensitive string comparison.
 class Multiplex:
     __list_movie_name = ["movie1", "movie2"]
     __list_total_tickets = [100, 60]
-    __list_last_seat_number = ['M1-23', None]
+    __list_last_seat_number = ["M1-23", None]
     __list_ticket_price = [150, 200]
 
     def __init__(self):
@@ -54,10 +54,12 @@ class Multiplex:
         self.__total_price = None
 
     def calculate_ticket_price(self, movie_index, number_of_tickets):
-        self.__total_price = Multiplex.__list_ticket_price[movie_index] * number_of_tickets
+        self.__total_price = (
+            Multiplex.__list_ticket_price[movie_index] * number_of_tickets
+        )
 
     def check_seat_availability(self, movie_index, number_of_tickets):
-        if (Multiplex.__list_total_tickets[movie_index] < number_of_tickets):
+        if Multiplex.__list_total_tickets[movie_index] < number_of_tickets:
             return False
         else:
             return True
@@ -85,7 +87,7 @@ class Multiplex:
         else:
             last_ticket = int(Multiplex.__list_last_seat_number[movie_index][3:])
         for i in range(1, number_of_tickets + 1):
-            seat_numbers.append("M" + str(movie_index + 1) + '-' + str(i + last_ticket))
+            seat_numbers.append("M" + str(movie_index + 1) + "-" + str(i + last_ticket))
         Multiplex.__list_last_seat_number[movie_index] = seat_numbers[-1]
         Multiplex.__list_total_tickets[movie_index] -= number_of_tickets
         return seat_numbers
@@ -93,9 +95,9 @@ class Multiplex:
 
 booking1 = Multiplex()
 status = booking1.book_ticket("movie1", 10)
-if (status == 0):
+if status == 0:
     print("invalid movie name")
-elif (status == -1):
+elif status == -1:
     print("Tickets not available for movie-1")
 else:
     print("Booking successful")
@@ -104,9 +106,9 @@ else:
 print("-----------------------------------------------------------------------------")
 booking2 = Multiplex()
 status = booking2.book_ticket("movie2", 6)
-if (status == 0):
+if status == 0:
     print("invalid movie name")
-elif (status == -1):
+elif status == -1:
     print("Tickets not available for movie-2")
 else:
     print("Booking successful")

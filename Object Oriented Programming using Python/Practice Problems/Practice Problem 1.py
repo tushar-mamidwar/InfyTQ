@@ -33,7 +33,16 @@ For testing:
 
 
 class Purchase:
-    list_of_items = ['Apple', 'Biscuits', 'Chocolates', 'Jam', 'Butter', 'Milk', 'Soap', 'Hand Sanitizer']
+    list_of_items = [
+        "Apple",
+        "Biscuits",
+        "Chocolates",
+        "Jam",
+        "Butter",
+        "Milk",
+        "Soap",
+        "Hand Sanitizer",
+    ]
     list_of_count_of_each_item_sold = [0, 0, 0, 0, 0, 0, 0, 0]
 
     def __init__(self):
@@ -41,7 +50,9 @@ class Purchase:
         self.__items_purchased = []
 
     def provide_offer(self):
-        Purchase.list_of_count_of_each_item_sold[Purchase.list_of_items.index("Hand Sanitizer")] += 1
+        Purchase.list_of_count_of_each_item_sold[
+            Purchase.list_of_items.index("Hand Sanitizer")
+        ] += 1
         self.__item_on_offer = "Hand Sanitizer"
 
     def sell_items(self, list_of_items_to_be_purchased):
@@ -49,7 +60,8 @@ class Purchase:
             list_of_items_to_be_purchased[i] = list_of_items_to_be_purchased[i].title()
             if list_of_items_to_be_purchased[i] in Purchase.list_of_items:
                 Purchase.list_of_count_of_each_item_sold[
-                    Purchase.list_of_items.index(list_of_items_to_be_purchased[i])] += 1
+                    Purchase.list_of_items.index(list_of_items_to_be_purchased[i])
+                ] += 1
                 self.__items_purchased.append(list_of_items_to_be_purchased[i])
 
         if "Soap" in list_of_items_to_be_purchased:
@@ -70,5 +82,5 @@ class Purchase:
 
 
 purchase1 = Purchase()
-purchase1.sell_items(['JAM', 'CHOcolates', 'Ghee', 'Soap'])
+purchase1.sell_items(["JAM", "CHOcolates", "Ghee", "Soap"])
 print(purchase1.get_item_of_offer())

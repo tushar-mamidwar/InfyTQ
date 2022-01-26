@@ -18,32 +18,34 @@ If the given child Id is invalid, an error message "Child id is invalid" should 
  of chocolates and display the list containing the total number of chocolates received by each child.
 """
 
-#lex_auth_01269442027919769669
+# lex_auth_01269442027919769669
 
-#Global variables
-child_id=(10,20,30,40,50)
-chocolates_received=[12,5,3,4,6]
+# Global variables
+child_id = (10, 20, 30, 40, 50)
+chocolates_received = [12, 5, 3, 4, 6]
+
 
 def calculate_total_chocolates():
-    total_chocolates=0
+    total_chocolates = 0
     for i in chocolates_received:
-        total_chocolates+=i
+        total_chocolates += i
     return total_chocolates
-    #Remove pass and write your logic here to find and return the total number of chocolates
+    # Remove pass and write your logic here to find and return the total number of chocolates
 
-def reward_child(child_id_rewarded,extra_chocolates):
 
-    #Remove pass and write your logic here
-    chocolates_received[child_id.index(child_id_rewarded)]+=extra_chocolates
+def reward_child(child_id_rewarded, extra_chocolates):
+
+    # Remove pass and write your logic here
+    chocolates_received[child_id.index(child_id_rewarded)] += extra_chocolates
 
     # Use the below given print statements to display the output
     # Also, do not modify them for verification to work
 
-    #print("Extra chocolates is less than 1")
-    #print("Child id is invalid")
-    #print(chocolates_received)
+    # print("Extra chocolates is less than 1")
+    # print("Child id is invalid")
+    # print(chocolates_received)
 
 
 print(calculate_total_chocolates())
-#Test your code by passing different values for child_id_rewarded,extra_chocolates
-reward_child(20,2)
+# Test your code by passing different values for child_id_rewarded,extra_chocolates
+reward_child(20, 2)

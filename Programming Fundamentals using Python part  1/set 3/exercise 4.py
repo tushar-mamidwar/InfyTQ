@@ -29,4 +29,4 @@ for baggage_weight in 29, 30, 31, 32, 28:
     i += 1
 
 print("No. of passengers who cleared baggage check:", count)
-̥
+

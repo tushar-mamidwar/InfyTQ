@@ -17,6 +17,7 @@ Sample Input                            Expected Output
 
 # lex_auth_01269438070259712046
 
+
 def count_names(name_list):
     count1 = 0
     count2 = 0

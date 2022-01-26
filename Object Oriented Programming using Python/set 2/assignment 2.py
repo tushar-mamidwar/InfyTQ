@@ -31,15 +31,17 @@ class Util:
     def parse_customer(self, list_of_call_string):
         self.list_of_call_objects = []
         for call_detail in list_of_call_string:
-            call_detail = call_detail.split(',')
-            call = CallDetail(call_detail[0], call_detail[1], call_detail[2], call_detail[3])
+            call_detail = call_detail.split(",")
+            call = CallDetail(
+                call_detail[0], call_detail[1], call_detail[2], call_detail[3]
+            )
             self.list_of_call_objects.append(call)
         print(self.list_of_call_objects)
 
 
-call = '9990000001,9330000001,23,STD'
-call2 = '9990000001,9330000002,54,Local'
-call3 = '9990000001,9330000003,6,ISD'
+call = "9990000001,9330000001,23,STD"
+call2 = "9990000001,9330000002,54,Local"
+call3 = "9990000001,9330000003,6,ISD"
 
 list_of_call_string = [call, call2, call3]
 Util().parse_customer(list_of_call_string)

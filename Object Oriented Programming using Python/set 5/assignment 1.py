@@ -100,9 +100,9 @@ class Employee:
     def calculate_salary(self):
         jl_hike = self.identify_job_level_hike()
         ex_hike = self.identify_performance_hike()
-        if (jl_hike != None):
+        if jl_hike != None:
             hike = jl_hike
-            if (ex_hike != None):
+            if ex_hike != None:
                 hike += ex_hike
             incentive = self.identify_incentive()
             self.update_salary(hike, incentive)
@@ -113,7 +113,9 @@ class Employee:
 
 # Implement the class here
 class PermanentEmployee(Employee):
-    def __init__(self, emp_id, e_incentive, p_incentive, job_level, salary, performance_list):
+    def __init__(
+        self, emp_id, e_incentive, p_incentive, job_level, salary, performance_list
+    ):
         super().__init__(emp_id, e_incentive, job_level, salary, performance_list)
         self.__p_incentive = p_incentive
 

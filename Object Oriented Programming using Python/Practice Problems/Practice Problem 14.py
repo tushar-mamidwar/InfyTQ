@@ -121,7 +121,7 @@ class LuxuryRoom(Room):
         super().__init__(price)
         self.__free_wifi = True
         Room.counter += 1
-        self.set_room_id('L' + str(Room.counter))
+        self.set_room_id("L" + str(Room.counter))
 
     def get_free_wifi(self):
         return self.__free_wifi
@@ -140,7 +140,7 @@ class StandardRoom(Room):
     def __init__(self, price):
         super().__init__(price)
         Room.counter += 1
-        self.set_room_id('S' + str(Room.counter))
+        self.set_room_id("S" + str(Room.counter))
         self.__comfortable_desk = True
 
     def get_comfortable_desk(self):
@@ -184,7 +184,9 @@ class Hotel:
         for room in self.__room_list:
             if room.get_customer() != None:
                 if room.get_customer().get_customer_id() == customer.get_customer_id():
-                    room_rent = room.calculate_room_rent(room.get_customer().get_no_of_days())
+                    room_rent = room.calculate_room_rent(
+                        room.get_customer().get_no_of_days()
+                    )
                     room.set_customer(None)
                     return room_rent
         return False

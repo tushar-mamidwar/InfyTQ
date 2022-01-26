@@ -78,8 +78,14 @@ class Transaction:
         self.__transaction_id = None
 
     def top_up_card(self, employee, amount):
-        if 500 <= amount <= 10000 and employee.validate_employee_id() and employee.validate_card_no():
-            employee.smart_card.set_account_balance(employee.smart_card.get_account_balance() + amount)
+        if (
+            500 <= amount <= 10000
+            and employee.validate_employee_id()
+            and employee.validate_card_no()
+        ):
+            employee.smart_card.set_account_balance(
+                employee.smart_card.get_account_balance() + amount
+            )
         else:
             return -1
 
@@ -87,7 +93,11 @@ class Transaction:
         balance = employee.smart_card.get_account_balance()
         if (balance - 500) >= amount and employee.validate_employee_id():
             employee.smart_card.set_account_balance(balance - amount)
-            self.__transaction_id = "T" + str(employee.get_employee_id())[0] + employee.smart_card.get_card_no()[3:5]
+            self.__transaction_id = (
+                "T"
+                + str(employee.get_employee_id())[0]
+                + employee.smart_card.get_card_no()[3:5]
+            )
             return
         else:
             return -1

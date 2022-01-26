@@ -68,5 +68,15 @@ app1 = Applicant("app1")
 app2 = Applicant("app2")
 app1.apply_for_job("A")
 app2.apply_for_job("B")
-print("Applicant 1:", app1.get_applicant_name(), app1.get_applicant_id(), app1.get_job_band())
-print("Applicant 2:", app2.get_applicant_name(), app2.get_applicant_id(), app2.get_job_band())
+print(
+    "Applicant 1:",
+    app1.get_applicant_name(),
+    app1.get_applicant_id(),
+    app1.get_job_band(),
+)
+print(
+    "Applicant 2:",
+    app2.get_applicant_name(),
+    app2.get_applicant_id(),
+    app2.get_job_band(),
+)

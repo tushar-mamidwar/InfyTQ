@@ -1,9 +1,9 @@
-'''
+"""
 Problem Statement
 Write a python function which searches for a particular substring in a given string. The substring may occur more than once in the string. If found, return the number of occurrences of the substring in the string. Otherwise, return 0.
 
 Perform case sensitive string comparison wherever necessary.
-'''
+"""
 # lex_auth_0127667355651112963444
 
 

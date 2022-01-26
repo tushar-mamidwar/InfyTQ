@@ -25,25 +25,25 @@ I will not repeat mistakes                                  I wll nt rpt mstks
 
 # lex_auth_01269444961482342489
 
+
 def sms_encoding(data):
-    vowel = ('a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U')
+    vowel = ("a", "e", "i", "o", "u", "A", "E", "I", "O", "U")
     data = data.split()
-    encoded_msg=""
+    encoded_msg = ""
     for word in data:
-        consonant_present=False
+        consonant_present = False
         for character in word:
             if character not in vowel:
-                consonant_present=True
+                consonant_present = True
                 break
         if consonant_present:
             for character in word:
                 if character not in vowel:
-                    encoded_msg+=character
-            encoded_msg+=' '
+                    encoded_msg += character
+            encoded_msg += " "
         else:
-            encoded_msg+=word+' '
+            encoded_msg += word + " "
     return encoded_msg[:-1]
-
 
 
 data = "I love Python"

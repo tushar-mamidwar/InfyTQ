@@ -84,7 +84,7 @@ class CabService:
             charge = self.get_cab_charge(index) * self.__distance_in_kms
             charge += self.calculate_waiting_charge(waiting_time_mins)
             CabService.__counter += 1
-            self.__service_id = (CabService.__counter)
+            self.__service_id = CabService.__counter
             CabRepository.no_of_cars[index] -= 1
             return charge
         return -1

@@ -72,7 +72,7 @@ class OccasionalCustomer(Customer):
     def __init__(self, distance_in_kms, customer_name):
         super().__init__(customer_name)
         OccasionalCustomer.__counter += 1
-        self.bill_id = 'O' + str(OccasionalCustomer.__counter)
+        self.bill_id = "O" + str(OccasionalCustomer.__counter)
         self.__distance_in_kms = distance_in_kms
 
     def get_distance_in_kms(self):
@@ -102,7 +102,7 @@ class RegularCustomer(Customer):
     def __init__(self, no_of_tiffin, customer_name):
         super().__init__(customer_name)
         RegularCustomer.__counter += 1
-        self.bill_id = 'R' + str(RegularCustomer.__counter)
+        self.bill_id = "R" + str(RegularCustomer.__counter)
         self.__no_of_tiffin = no_of_tiffin
 
     def validate_no_of_tiffin(self):

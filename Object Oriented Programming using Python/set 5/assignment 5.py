@@ -107,15 +107,21 @@ class Graduate(Employee):
         self.__cgpa = cgpa
 
     def validate_job_band(self):
-        job_bands = ['A', 'B', 'C']
+        job_bands = ["A", "B", "C"]
         if self.get_job_band() in job_bands:
             return True
         return False
 
     def calculate_gross_salary(self):
-        incentive = {'A': 4, 'B': 6, 'C': 10}
-        if self.validate_basic_salary() and self.validate_qualification() and self.validate_job_band():
-            salary = self.get_basic_salary() * (1.12 + incentive[self.get_job_band()] / 100)
+        incentive = {"A": 4, "B": 6, "C": 10}
+        if (
+            self.validate_basic_salary()
+            and self.validate_qualification()
+            and self.validate_job_band()
+        ):
+            salary = self.get_basic_salary() * (
+                1.12 + incentive[self.get_job_band()] / 100
+            )
             if 4 <= self.__cgpa <= 4.25:
                 salary += 1000
             elif 4.26 <= self.__cgpa <= 4.5:
@@ -145,11 +151,17 @@ class Lateral(Employee):
             return False
 
     def calculate_gross_salary(self):
-        incentive = {'D': 13, 'E': 16, 'F': 20}
-        if self.validate_basic_salary() and self.validate_qualification() and self.validate_job_band():
-            sme_bonus = {'AGP': 6500, 'AGPT': 8200, 'AGDEV': 11500}
-            salary = self.get_basic_salary() * (1.12 + incentive[self.get_job_band()] / 100) + sme_bonus[
-                self.__skill_set]
+        incentive = {"D": 13, "E": 16, "F": 20}
+        if (
+            self.validate_basic_salary()
+            and self.validate_qualification()
+            and self.validate_job_band()
+        ):
+            sme_bonus = {"AGP": 6500, "AGPT": 8200, "AGDEV": 11500}
+            salary = (
+                self.get_basic_salary() * (1.12 + incentive[self.get_job_band()] / 100)
+                + sme_bonus[self.__skill_set]
+            )
             return salary
         return -1
 
@@ -157,7 +169,7 @@ class Lateral(Employee):
         return self.__skill_set
 
 
-emp2 = Lateral('D', 4000, 'Bachelors', "AGP", "emp1")
+emp2 = Lateral("D", 4000, "Bachelors", "AGP", "emp1")
 print(emp2.calculate_gross_salary())
-emp1 = Graduate('A', 4000, 'Bachelors', 4.5, "emp2")
+emp1 = Graduate("A", 4000, "Bachelors", 4.5, "emp2")
 print(emp1.calculate_gross_salary())

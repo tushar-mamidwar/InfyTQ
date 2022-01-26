@@ -40,9 +40,9 @@ class Util:
             self.list_of_customer_calldetail_objects.append(customer)
 
 
-cust1 = Customer(9900009901, 'cust1', 23)
-cust2 = Customer(9900009902, 'cust2', 24)
-cust3 = Customer(9900009903, 'cust3', 25)
+cust1 = Customer(9900009901, "cust1", 23)
+cust2 = Customer(9900009902, "cust2", 24)
+cust3 = Customer(9900009903, "cust3", 25)
 list_of_customers = [cust1, cust2, cust3]
 
 call1 = CallDetail(9900009901, 8800123401, 5)
