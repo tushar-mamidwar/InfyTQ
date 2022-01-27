@@ -1,3 +1,23 @@
+"""
+Problem Statement
+When train1 reached Mumbai, the compartments that contained goods had to be now transferred to train2.
+
+Create a TrainService class as shown below:
+
+While transferring goods from train1 to train2, all the goods compartments from train1 should be 
+inserted one after the other after the first compartment of train2. The compartments of train1 which 
+have goods should be added to train2 in same sequence as they were in train1.
+
+Note: While adding the compartments of train1 to train2, there is a possibility that the first and 
+    last goods compartment of train1 may not be completely filled
+
+transfer_goods() method should transfer the goods compartments from train1 to train2. Once transferred, 
+    display the compartment details of train1 and train2.
+
+Note: Reuse the code for Train class, Goods class and Compartment class from Practice Assignment - 7.
+"""
+
+
 class Queue:
     def __init__(self, max_size):
 
@@ -48,6 +68,8 @@ class Queue:
         msg = " ".join(msg)
         msg = "Queue data(Front to Rear): " + msg
         return msg
+
+
 class Node:
     def __init__(self, data):
         self.__data = data
@@ -257,7 +279,13 @@ class Compartment:
         self.__no_of_goods = goods
 
     def __str__(self):
-        return self.__name+'  '+str(self.__no_of_passengers)+'  '+str(self.__no_of_goods)
+        return (
+            self.__name
+            + "  "
+            + str(self.__no_of_passengers)
+            + "  "
+            + str(self.__no_of_goods)
+        )
 
 
 class Goods:
@@ -273,17 +301,22 @@ class Goods:
 
     def __str__(self):
         return self.__product + ":" + str(self.__quantity)
+
+
 class TrainService:
     @staticmethod
-    def transfer_goods(train1,train2):
-        compartment_list=train1.get_compartment_list()
-        temp=compartment_list.get_head()
-        capacity=train2.get_passenger_capacity_per_compartment()//train2.get_passenger_goods_ratio()
-        while temp.get_data().get_no_of_passengers()!=0:
-            temp=temp.get_next()
-        while temp!=None:
+    def transfer_goods(train1, train2):
+        compartment_list = train1.get_compartment_list()
+        temp = compartment_list.get_head()
+        capacity = (
+            train2.get_passenger_capacity_per_compartment()
+            // train2.get_passenger_goods_ratio()
+        )
+        while temp.get_data().get_no_of_passengers() != 0:
+            temp = temp.get_next()
+        while temp != None:
             train2.get_compartment_list().add(temp.get_data())
-            temp=temp.get_next()
+            temp = temp.get_next()
         # total_goods=0
         # while temp!=None:
         #     compartment_list.delete(temp.get_data())
@@ -300,32 +333,32 @@ class TrainService:
         #     train2.get_compartment_list().add(new_comartment)
 
 
-goods_list=Queue(4)
-fridge=Goods('Fridge',26)
-sofaset=Goods('Sofaset',5)
-table=Goods('Table',23)
-chairs=Goods('Chairs',45)
+goods_list = Queue(4)
+fridge = Goods("Fridge", 26)
+sofaset = Goods("Sofaset", 5)
+table = Goods("Table", 23)
+chairs = Goods("Chairs", 45)
 
 goods_list.enqueue(fridge)
 goods_list.enqueue(sofaset)
 goods_list.enqueue(table)
 goods_list.enqueue(chairs)
 
-train1=Train('Lokmanya','Bangalore','Mumbai',60,5)
-train2=Train('Rajdhani','Mumbai','Chandigarh',75,5)
+train1 = Train("Lokmanya", "Bangalore", "Mumbai", 60, 5)
+train2 = Train("Rajdhani", "Mumbai", "Chandigarh", 75, 5)
 
 train1.add_passenger_compartments(455)
 train2.add_passenger_compartments(5)
 
 train1.add_goods(goods_list)
 
-compartment_list=train1.get_compartment_list()
+compartment_list = train1.get_compartment_list()
 compartment_list.display()
 
-train_service=TrainService()
-train_service.transfer_goods(train1,train2)
-compartment_list_train2=train2.get_compartment_list()
-compartment_list=train1.get_compartment_list()
+train_service = TrainService()
+train_service.transfer_goods(train1, train2)
+compartment_list_train2 = train2.get_compartment_list()
+compartment_list = train1.get_compartment_list()
 compartment_list.display()
 print()
 compartment_list_train2.display()
