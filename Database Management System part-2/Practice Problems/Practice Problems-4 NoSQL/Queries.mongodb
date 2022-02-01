@@ -1,0 +1,90 @@
+/*
+Rex, a MongoDB programmer is working on an empty collection named trainee. This collection is 
+created to store information about trainees such as name, score and city.
+
+Can you help Rex with a MongoDB operation to add the following documents into the collection trainee?
+*/
+db.trainee.insert([
+    {_id:401, Name:'Alex', Score:88, City:'Mumbai'},
+    {_id:402, Name:'Rinku', Score:82, City:'Hyderabad'},
+    {_id:403, Name:'George', Score:70, City:'Mumbai'},
+    {_id:404, Name:'Mathew', Score:83, City:'Mumbai'},
+    {_id:405, Name:'Victoria', Score:88, City:'Chennai'}
+]);
+
+
+/*
+In the previous problem, you helped Rex with adding the documents to the collection trainee. 
+The current data in the collection trainee is given below:
+There are additional requirements to modify data in the collection trainee.
+
+Can you help Rex with suitable MongoDB operations to modify the documents based on each of the 
+following requirements?
+*/
+
+/* 1. Add a new field Category with value HPF for all documents whose Score is more than 85.*/
+
+db.trainee.update({Score:{$gt:85}},{$set:{Category:'HPF'}},{multi:true});
+
+/* 2. Modify the City to Kolkata for the trainee(s) whose City is Chennai or Score is 82 (change only the 
+first document satisfying the given condition)*/
+
+db.trainee.update({$or:[{City:'Chennai'},{Score:82}]},{$set:{City:'Kolkata'}});
+
+/* 3. Modify the Score to 92 for all the documents of trainee whose Name is George or City is Chennai.*/
+
+db.trainee.updateMany({$or:[{City:'Chennai'},{Name:'George'}]},{$set:{Score:92}});
+
+/* 4. Replace the document having _id value as 403 with new field Batch with value Feb-2019 and Name 
+with value Peter.*/
+
+db.trainee.update({_id:403},{Name:'Peter',Batch:'Feb-2019'});
+
+
+/*
+Susan, a MongoDB programmer is working on a collection named item. This collection is created to 
+store information about items such as description, price and discount.
+Data in the collection item is given below:
+
+Can you help Susan with suitable MongoDB operations to retrieve the documents from the collection 
+item for each of the following requirements?
+*/
+
+/* 1.Display _id, description and price of those items whose discount is less than or equal to 15.*/
+
+db.item.find({discount:{$lte:15}},{description:1,price:1});
+
+/* 2.Display description and discount of those items whose price is 50 or description are Vinegar.*/
+
+db.item.find({$or:[{price:50},{description:'Vinegar'}]},{_id:0,description:1,discount:1});
+
+/* 3.Display _id and price of those items whose description is Tea and price is less than 250.*/
+
+db.item.find({$and:[{description:'Tea'},{price:{$lt:250}}]},{price:1});
+
+/* 4.Retrieve every field for the items whose price is either 110 or 75.*/
+
+db.item.find({$or:[{price:110},{price:75}]});
+
+
+/*
+In the previous problem, you helped Susan with the retrieval of documents from the 
+collection item. She is given some additional requirements to eliminate data from the 
+collection item.
+Can you help her with suitable MongoDB operations to eliminate the documents based 
+on each of the following requirements?
+*/
+
+/* 1.Delete the document(s) whose description is Biscuits or discount is less than 10.*/
+
+db.item.remove({$or:[{description:'Biscuits'},{discount:{$lt:10}}]});
+
+/* 2.Delete the document having _id value as 2.*/
+
+db.item.remove({_id:2});
+
+/* 3.Delete all the documents and make the collection empty.*/
+
+db.item.remove({});
+
+

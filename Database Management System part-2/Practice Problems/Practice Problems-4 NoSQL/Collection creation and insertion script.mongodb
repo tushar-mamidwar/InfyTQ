@@ -1,0 +1,9 @@
+/* Practice Problem 3 */
+
+
+db.item.remove({});
+db.item.insert([{_id: 1, description: "Sugar", price: 60, discount: 10}, 
+{_id: 2, description: "Vinegar", price: 110, discount: 15}, 
+{_id: 3, description: "Tea", price: 200, discount: 20},
+{_id: 4, description: "Biscuits", price: 50, discount: 20},
+{_id: 5, description: "Coffee", price: 75, discount: 5}]);
